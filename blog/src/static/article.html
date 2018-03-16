@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title itemprop="name">使用JavaScript随机生成十六进制颜色值 - 源于分享</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />    
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="baidu-site-verification" content="e3pVbsVmlF" />
+<meta itemprop="image" content="https://www.myblogbo.com/attachment/20161219/33754f47ab85497ea29176b9be84123f.jpg"/>
+<meta name="keywords" content="十六进制,javascript,随机生成颜色值,js,使用JavaScript随机生成十六进制颜色值">
+<meta name="description" content="使用JavaScript随机生成十六进制颜色值">
+   
+<link rel="shortcut icon" href="/templates/simple/images/share.ico"/>
+<link rel="stylesheet" type="text/css" href="./templates/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="./templates/css/font-awesome.min.css"/>  
+<link rel="stylesheet" type="text/css" media="all" href="./templates/css/style.css"/>
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="/templates/simple/js/html5shiv.min.js"></script>
+<script src="/templates/simple/js/respond.min.js"></script>
+<![endif]-->
+
+	<link rel="stylesheet" href="./templates/css/zenburn.css">
+	  <style type="text/css">
+    .articleCon a{color:#23527c;}
+    .articleCon a:hover{color:#000;}
+	.zhuanzai p{color:#6c9;}
+	.zhuanzai a{color:#000;}
+	.zhuanzai a:hover{color:#6c9;}
+	.replycontent{color:#6c9;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; background: #FFFFCC;padding:5px;border-radius: 10px;}
+	.replycontent p{font-size:14px;}
+	.replycontent .replyc{display:block;text-indent:1em;font-szie:12px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; }
+	.articleDetail .pageNav nav{width:90%;}
+	  </style>
+</head>
+<body id="main_body">
+<!-- 搜索框 -->
+<form role="search" method="get" class="search-form" action="/s">
+	<span class="search-close">&times;</span>
+	<label>
+		<input type="search" class="search-field" placeholder="请输入关键字搜索" value="" name="k" autocomplete="off">
+	</label>
+	<input type="submit" class="search-submit" value="搜索">
+</form>
+<!-- shadow -->
+<div class="shadow"></div>
+<!-- page scroll -->
+<div class="scroll-bar" style="width: 0%; display: block;"></div>
+<!-- progress -->
+<div class="loading-bar"></div>
+<!-- banner
+<div class="banner" style="background:url(http://file.myblogbo.com/banner.jpg);">  -->
+<div class="banner" style="background: url(/templates/simple/images/banner.jpg);">
+
+	<!-- header -->
+	<div class="header container">
+		<!--个人信息-->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="personInfo">
+					<div class="logo">
+					    <a href="/">
+					   	<!--  <img src="/templates/simple/picture/kide.jpg" alt="logo"> -->
+								<img src="/attachment/20161219/33754f47ab85497ea29176b9be84123f.jpg" class="animated bounceInDown"/>
+					    </a>
+					</div>
+					<div class="logoTheme">
+						<h3>谦和之中见卓越</h3>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div> 
+</div>
+	<div class="articleDetail container">
+    <div class="row">
+  		<div class="col-md-12">
+  			<div class="articleContent">
+   				<!-- 标题 -->
+   				<div class="title">使用JavaScript随机生成十六进制颜色值</div>
+   				<!-- 访问量 ...-->
+   				<div class="secTitleBar">
+   					<ul>
+   						<li>分类：<a href="/article-javascript-1.html" null >JavaScript</a></li>
+   						<li>发表：2016-12-19</li>
+   						<li>围观：380</li>
+   						<li><a href="javascript:goTo('#SOHUCS',500);">前往评论</a>
+   					 </li>
+   						<!--<li><a href="#comments">评论：0</a></li>-->
+   					</ul>
+            	</div>
+            <!-- 内容 -->
+            <div class="articleCon post_content"><p>以下两种方法都是可行的。</p> 
+<p>方法一：</p> 
+<pre class="language-javascript"><code>function getRandomColor () {
+  let rgb = []
+  for (let i = 0 ; i &lt; 3; ++i){
+    let color = Math.floor(Math.random() * 256).toString(16)
+    color = color.length == 1 ? '0' + color : color
+    rgb.push(color)
+  }
+  return '#' + rgb.join('')
+}</code></pre> 
+<p>方法二：</p> 
+<pre class="language-javascript"><code>function getRandomColor(){
+  //16进制的最大范围16777215（#FFFFFF）
+  //把颜色变成16进制
+  var str = Math.ceil(Math.random()*16777215).toString(16);
+  while(str.length&lt;6){
+    str = '0'+str; //不够六位数加 0
+  }
+  return  "#"+str;
+}</code></pre> 
+<p>使用的时候直接调用上面的函数就可以，拿到随机的颜色值</p> 
+<pre class="language-javascript"><code> color:getRandomColor();</code></pre>
+
+            	<div class="zhuanzai">
+            	    <p>除特别注明外，本站所有文章均为原创，转载请注明原文链接：<a href="https://www.myblogbo.com//article/9.html" title="使用JavaScript随机生成十六进制颜色值">https://www.myblogbo.com/article/9.html</a></p>
+            	</div>
+
+   				<!-- 标签 -->
+   				<!-- <div class="articleTagsBox">
+   					<ul><span>标签：</span> <a href="" rel="tag">simple</a></ul>
+   				</div> -->
+           </div>
+    <!-- -->
+        <div id="SOHUCS" sid="9" ></div> 
+        <script type="text/javascript"> 
+        (function(){ 
+        var appid = 'cysUSTfb3'; 
+        var conf = 'prod_e0ba6c3f8859de137ede5155cf635839'; 
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        if (width < 960) { 
+        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+   	<!--  -->
+      </div>
+    </div>
+  </div>
+<!-- -->
+</div>
+﻿<!--footer-->
+<footer>
+	<div class="main-footer">
+	    <div class="container">
+	        <div class="row footrow">
+	        	<div class="col-md-3">
+	                <div class="widget catebox">
+	                    <h4 class="title">分类目录</h4>
+	                    <div class="box category clearfix">
+	                   							        		<li class="cat-item">
+					        		    <a  href="/article-java-1.html">Java</a>
+					        		</li>
+					        		<li class="cat-item">
+					        		    <a  href="/article-linux-1.html">Linux</a>
+					        		</li>
+					        		<li class="cat-item">
+					        		    <a  href="/article-css-1.html">CSS</a>
+					        		</li>
+					        		<li class="cat-item">
+					        		    <a  href="/article-javascript-1.html">JavaScript</a>
+					        		</li>
+						</div>
+	                </div>
+	            </div>
+
+			<div class="col-md-3">
+		         <div class="widget tagbox">
+		            <h4 class="title">文章标签</h4>
+		            <div class="box tags clearfix">
+					    <ul class="post_tags">
+									<li><a href="/article-javascript-1.html">javascript</a></li>
+									<li><a href="/article-css-1.html">css</a></li>
+									<li><a href="/article-linux-1.html">linux</a></li>
+									<li><a href="/article-复制文本-1.html">复制文本</a></li>
+									<li><a href="/article-百度分享-1.html">百度分享</a></li>
+									<li><a href="/article-畅言-1.html">畅言</a></li>
+									<li><a href="/article-apache-1.html">apache</a></li>
+									<li><a href="/article-编译安装apache-1.html">编译安装apache</a></li>
+									<li><a href="/article-面试题-1.html">面试题</a></li>
+					      </ul>			
+				     </div>
+			    </div>
+			</div>
+
+			
+		<div class="col-md-3">
+	       <div class="widget contactbox">
+	           <h4 class="title">联系我</h4>
+	           <div class="contact-us clearfix">
+				   <li>	
+				<a href="javascript:;">		
+				   <i class="fa fa-envelope-o"></i>465180253@qq.com</a></li>
+				</div>
+	         </div>
+	    </div>
+	    <div class="col-md-3">
+	           <div class="widget linkbox">
+	              <h4 class="title">友情链接</h4>
+	              <div class="box friend-links clearfix">
+                    <li><a href="http://www.jpress.cc" title="" target="_blank">Jpress之家</a><li>
+<li><a href="http://www.duzhi.me" title="" target="_blank">读之而知</a><li>
+			      </div>
+			   </div>
+		    </div>
+	    
+	        </div>
+	        <div class="row">
+	        	<div class="copyright" style="text-align:center;">
+	        		<span>© 2016-2017 <a href="http://www.myblogbo.com">myblogbo.com</a> , All Rights Reserved  </span>
+	        		<span><a href="http://www.miibeian.gov.cn/" target="_blank" title="粤ICP备16066078号-2">粤ICP备16066078号-2</a></span>
+	        		<span>Designed by · <a href="http://vinceok.com">vinceok</a></span> 
+	        		<span><a href="/sitemap" target="_blank">网站地图</a></span>
+	        		<span><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d9281b076392ad0be1d65e5682002981";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script></span>
+	        		<!-- <a href="tencent://message/?uin=465180253&Site=121ask.com&Meu=yes" class="kefu pull-right hidden-xs"><i class="fa fa-qq"></i>在线联系我</a> -->
+	        	</div>
+	        </div>
+	    </div>
+	</div>
+</footer>	
+<!-- footer end --><!-- 底部菜单&侧边栏按钮 -->
+<div class="icon-search" title="搜索内容">
+	<i style="margin-top:18px;" class="fa fa-search"></i>
+</div>
+<div class="menu mobile-menuicon" title="菜单栏">
+	<i class="fa fa-bars"></i>
+</div>
+<a class="to-top" title="回到顶部">
+	<span class="topicon"><i class="fa fa-angle-up"></i></span>
+	<span class="toptext">Top</span>
+</a>
+<div class="menubox">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul id="menu-menu" class="icon-list">
+					<li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+						<a href="/">首页
+					     </a>
+				     </li>
+			        		<li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+				        		<a href="/article-java-1.html">Java</a>
+			        		</li>
+			        		<li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+				        		<a href="/article-linux-1.html">Linux</a>
+			        		</li>
+			        		<li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+				        		<a href="/article-css-1.html">CSS</a>
+			        		</li>
+			        		<li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+				        		<a href="/article-javascript-1.html">JavaScript</a>
+			        		</li>
+				</ul>			
+			</div>
+		</div>
+	</div>
+	<a href="javascript:;" class="menu-close">&times;</a>
+</div>
+<!-- menu end -->
+	<script src="/counter?cid=9"></script>
+	<script src="/templates/simple/js/highlight.js"></script>
+	<script src="/templates/simple/js/jquery.min.js"></script>
+<script src="/templates/simple/js/jquery.min.js"></script>
+<script src="/templates/simple/js/jquery.totop.min.js"></script>
+<script src="/templates/simple/js/menu.js"></script>
+<script src="/templates/simple/js/top_right_menu.js"></script>
+<script src="/templates/simple/js/jquery.museum.js"></script>
+<!--<script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script>-->
+<script type="text/javascript">
+	$(document).ready(function() {
+	//images
+	    $.museum($('.articleCon img'));
+	//code
+		$('code').each(function(i, block){
+	       hljs.highlightBlock(block);
+	    });
+	});
+	function reply(id){
+		$("#parent_id").val(id);
+	};
+	//baidu share
+	 window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["sqq","qzone","weixin","youdao","evernotecn","tsina","copy"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+   //animateTO
+  function goTo(obj,time){
+    $(document.body).animate({scrollTop:$(obj).offset().top},time);
+  }
+</script>
+</body>
+</html>
