@@ -67,7 +67,7 @@
     methods: {
       fetchData: function () {
         const path = this.$route.path
-        fetch(path, 'get', {id: path.substring(path.lastIndexOf('/') + 1)}).then(response => {
+        fetch(path, 'get', null).then(response => {
           this.articleInfo = response.data.articleInfo
           this.content = response.data.data
         }).then(() => {

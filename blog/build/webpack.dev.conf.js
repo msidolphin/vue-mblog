@@ -65,14 +65,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
-
  	 	new webpack.ProvidePlugin({
     	  "$": "jquery",
      	 	"jQuery": "jquery",
      	 	"window.jQuery": "jquery",
         "hljs": "highlight.js"
   	})
-
   ]
 })
 

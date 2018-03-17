@@ -20,6 +20,7 @@ const list = [
 
 const detail = {
   1 : {
+    id: 1,
     articleInfo: {
       title: "JS生成随机的Web安全色",
       category: "JavaScript",
@@ -64,6 +65,7 @@ const detail = {
     '<p><a href="http://www.bootcss.com/p/websafecolors/">Web安全色</a></p>'
   },
   2: {
+    id: 2,
     articleInfo: {
       title: "使用 CSS3 实现 tip 提示",
       category: "CSS",
@@ -125,10 +127,10 @@ const detail = {
   }
 }
 
-mock.mock('/article/1', 'get', () => {
-  return detail['1']
+mock.mock('/article/' + 1, 'get', (res) => {
+  return detail[res.url.substring(res.url.lastIndexOf('/') + 1)]
 })
 
-mock.mock('/article/2', 'get', () => {
-  return detail['2']
+mock.mock('/article/' + 2, 'get', (res) => {
+  return detail[res.url.substring(res.url.lastIndexOf('/') + 1)]
 })
