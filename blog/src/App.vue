@@ -1,41 +1,33 @@
 <template>
   <div id="app">
-  	<div id="main_body">
-	  	<search-box/>
-	    <app-shadow/>
-	    <scroll-bar/>
-	    <loading-bar/>
-	  	<app-header/>
-	  	<home/>
-	  	<pagination/>
-	  	<app-footer/>
-	  	<menu-box/>
-	  	<tools-bar/>
-  	</div>
-   <!-- <img src="./assets/logo.png">-->
-    <!--<router-view/>-->
+    <search-box/>
+    <app-shadow/>
+    <scroll-bar/>
+    <loading-bar/>
+    <app-header/>
+    <!-- page start -->
+    <router-view/>
+    <!-- page end -->
+    <app-footer/>
+    <menu-box/>
+    <tools-bar/>
   </div>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader'
-import Home from '@/views/Home'
-import Pagination from '@/components/Pagination'
-import AppFooter from '@/components/AppFooter'
-import MenuBox   from '@/components/MenuBox'
-import ScrollBar from '@/components/ScrollBar'
-import SearchBox from '@/components/SearchBox'
+import AppHeader  from '@/components/AppHeader'
+import AppFooter  from '@/components/AppFooter'
+import MenuBox    from '@/components/MenuBox'
+import ScrollBar  from '@/components/ScrollBar'
+import SearchBox  from '@/components/SearchBox'
 import LoadingBar from '@/components/LoadingBar'
-import AppShadow     from '@/components/AppShadow'
+import AppShadow  from '@/components/AppShadow'
 import ToolsBar   from '@/components/ToolsBar'
-
 
 export default {
   name: 'App',
   components: {
   	AppHeader,
-  	Home,
-  	Pagination,
   	AppFooter,
   	MenuBox,
   	ScrollBar,

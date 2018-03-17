@@ -7,19 +7,24 @@ import router from './router'
 import $ from 'jquery'
 
 //import styles
-import "bootstrap/dist/css/bootstrap.css"
-import "./styles/css/style.css"
-import "./styles/css/zenburn.css"
-import "font-awesome/css/font-awesome.css"
+import 'bootstrap/dist/css/bootstrap.css'
+import './styles/css/style.css'
+import './styles/css/zenburn.css'
+import 'font-awesome/css/font-awesome.css'
 
 //import scripts
+import './scripts/jquery.totop.min'
+import './scripts/menu'
+import './scripts/top_right_menu'
+import './scripts/jquery.museum'
+import 'highlight.js'
 
-import "./scripts/jquery.totop.min"
-import "./scripts/menu"
-import "./scripts/top_right_menu"
-import "./scripts/jquery.museum"
+import '@/mock'
 
 Vue.config.productionTip = false
+
+//代码高亮
+hljs.initHighlightingOnLoad()
 
 /* eslint-disable no-new */
 new Vue({

@@ -17,7 +17,6 @@
 	$(function(){
 	 	$('.to-top').toTop({
 			position:false,
-			offset:$(window).height(),
 			autohide: true
 		})
 	})
