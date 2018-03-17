@@ -1,7 +1,6 @@
-/*杞藉叆鍔ㄧ敾 */
-// $(document).ready(function(){ 
+// $(document).ready(function(){
 // 	var fade = {transform: 'translateX(0)',opacity: 1};
-//     $("#main_body").css(fade); 
+//     $("#main_body").css(fade);
 // });
 
 $(function(){
@@ -18,7 +17,7 @@ $(function(){
 			opacity:'0',
 		},300);
 	}
-	//鐐瑰嚮闈炶彍鍗曞尯鍩熷叧闂彍鍗�
+
 	$('body').on('click',function () {
 		if (isOpen) {
 			animateHide();
@@ -26,8 +25,8 @@ $(function(){
 			return;
 		}
 	});
-	
-	
+
+
 	// 鐐瑰嚮鎸夐挳鍖烘墦寮€鑿滃崟
 	$('.menu').on('click',function (e) {
 		e.stopPropagation();
@@ -39,15 +38,15 @@ $(function(){
 		isOpen = true;
 		animateShow();
 	});
-	
-	
+
+
 	//鐐瑰嚮鑿滃崟鍖哄煙涓嶈兘鍏抽棴鑿滃崟
 	$(".menubox").on('click',function(e){
 		e.stopPropagation();
 		if (isOpen)  return;
 	});
-	
-	
+
+
 	//鐐瑰嚮close鎸夐挳鍏抽棴鑿滃崟
 	$(".menu-close").click(function(){
 		if(isOpen){
@@ -81,8 +80,8 @@ $(function(){
 		   }
 		 }
 	});
-	
-	
+
+
 	/*绛惧悕*/
 	// var signature = $(".signature").val();
 	// $(".personInfo .logoTheme h3").val(signature);
