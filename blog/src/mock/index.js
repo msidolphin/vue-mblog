@@ -4,16 +4,27 @@ import mock from 'mockjs'
 
 const list = [
   {
-
+    title: 'JS生成随机的Web安全色',
+    pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+    url: '/article/1',
+    summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+    '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+    '行代码，摘自网络 function g……',
+    author: 'admin',
+    date: '2016-09-19 10:12:24',
+    views: 2449,
+    tags: []
   },
   {
-
-  },
-  {
-
-  },
-  {
-
+    title: '使用 CSS3 实现 tip 提示 ',
+    url: '/article/2',
+    pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+    summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+    '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+    author: 'admin',
+    date: '2017-06-03',
+    views: 294,
+    tags: []
   }
 ]
 
@@ -62,58 +73,7 @@ const detail = {
     'document.getElementById(\'btn-load\').style.background = getRandomSafeColor();</code></pre>\n' +
     '<h1>结束语</h1>\n' +
     '<p>随机颜色应用还挺广泛的，比如各类网站的标签云,最后放出一个Web安全色的网站，里面颜色很纯正，适合应用于各类设计</p>\n' +
-    '<p><a href="http://www.bootcss.com/p/websafecolors/">Web安全色</a></p>',
-    hasComment: true,
-    commentCount: 4,
-    comments: {
-      articleId: 1,
-      data: [
-        {
-          commentID: 1,
-          avatar: 'http://cn.gravatar.com/avatar/4a809b0ffadc2f088bc9bfb290a9eded?s=48&d=monsterid&r=g',
-          name: '白狼',
-          content: '看看',
-          hasReply: false,
-          date: '2017-02-27 21:09:22'
-        },
-        {
-          commentID: 2,
-          avatar: 'http://cn.gravatar.com/avatar/f83693065fe1ba21aa5696a70afbf718?s=48&d=monsterid&r=g',
-          name: 'June',
-          content: '百度云这地址下载不了了，点击下载js会报错，导致没反应',
-          hasReply: false,
-          date: '2017-02-24 18:21:23'
-        },
-        {
-          commentID: 3,
-          avatar: 'http://cn.gravatar.com/avatar/6e3ee46a960e3126ac08de4fc9584769?s=48&d=monsterid&r=g',
-          name: 'Hello',
-          content: '可以给个Html模板吗',
-          hasReply: true,
-          replies: [
-            {
-              commentID: 4,
-              avatar: 'http://cn.gravatar.com/avatar/48b84191abbd3263ac0157692219da08?s=48&d=monsterid&r=g',
-              name: 'admin',
-              content: '1.0的有，在之前的文章里，你可以找找',
-              hasReply: false,
-              date: '2016-10-28 14:18:54',
-              to: 'Hello'
-            },
-            {
-              commentID: 4,
-              avatar: 'http://cn.gravatar.com/avatar/48b84191abbd3263ac0157692219da08?s=48&d=monsterid&r=g',
-              name: 'admin',
-              content: '1.0的有，在之前的文章里，你可以找找',
-              hasReply: false,
-              date: '2016-10-28 14:25:54',
-              to: 'admin'
-            }
-          ],
-          date: '2017-02-24 18:21:23'
-        }
-      ]
-    }
+    '<p><a href="http://www.bootcss.com/p/websafecolors/">Web安全色</a></p>'
   },
   2: {
     id: 2,
@@ -174,10 +134,7 @@ const detail = {
     '    transition: opacity .5s ease-in-out;\n' +
     '}</code></pre> \n' +
     '<p>&nbsp;</p> \n' +
-    '<p>&nbsp;</p>',
-    hasComment: false,
-    commentCount: 0,
-    comments: {}
+    '<p>&nbsp;</p>'
   }
 }
 
@@ -242,6 +199,11 @@ const comments = {
     }
   }
 }
+
+//文章列表
+mock.mock("/article", 'get', (res) => {
+  return list
+})
 
 //文章详情
 for(let key in detail) {
