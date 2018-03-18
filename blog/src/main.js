@@ -17,14 +17,21 @@ import './scripts/jquery.totop.min'
 import './scripts/menu'
 import './scripts/top_right_menu'
 import './scripts/jquery.museum'
-import 'highlight.js'
-
 import '@/mock'
+//代码高亮
+import 'highlight.js/styles/googlecode.css'
+import  hljs from 'highlight.js'
 
 Vue.config.productionTip = false
 
-//代码高亮
-hljs.initHighlightingOnLoad()
+hljs.Highlighting = function () {
+  //解决highlight.js 初始化函数只调用一次的问题
+  // if (initHighlighting.called)
+  //   return;
+  // initHighlighting.called = true;
+  var blocks = document.querySelectorAll('pre code');
+  [].forEach.call(blocks, hljs.highlightBlock);
+}
 
 /* eslint-disable no-new */
 new Vue({

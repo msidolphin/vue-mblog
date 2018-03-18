@@ -62,7 +62,58 @@ const detail = {
     'document.getElementById(\'btn-load\').style.background = getRandomSafeColor();</code></pre>\n' +
     '<h1>结束语</h1>\n' +
     '<p>随机颜色应用还挺广泛的，比如各类网站的标签云,最后放出一个Web安全色的网站，里面颜色很纯正，适合应用于各类设计</p>\n' +
-    '<p><a href="http://www.bootcss.com/p/websafecolors/">Web安全色</a></p>'
+    '<p><a href="http://www.bootcss.com/p/websafecolors/">Web安全色</a></p>',
+    hasComment: true,
+    commentCount: 4,
+    comments: {
+      articleId: 1,
+      data: [
+        {
+          commentID: 1,
+          avatar: 'http://cn.gravatar.com/avatar/4a809b0ffadc2f088bc9bfb290a9eded?s=48&d=monsterid&r=g',
+          name: '白狼',
+          content: '看看',
+          hasReply: false,
+          date: '2017-02-27 21:09:22'
+        },
+        {
+          commentID: 2,
+          avatar: 'http://cn.gravatar.com/avatar/f83693065fe1ba21aa5696a70afbf718?s=48&d=monsterid&r=g',
+          name: 'June',
+          content: '百度云这地址下载不了了，点击下载js会报错，导致没反应',
+          hasReply: false,
+          date: '2017-02-24 18:21:23'
+        },
+        {
+          commentID: 3,
+          avatar: 'http://cn.gravatar.com/avatar/6e3ee46a960e3126ac08de4fc9584769?s=48&d=monsterid&r=g',
+          name: 'Hello',
+          content: '可以给个Html模板吗',
+          hasReply: true,
+          replies: [
+            {
+              commentID: 4,
+              avatar: 'http://cn.gravatar.com/avatar/48b84191abbd3263ac0157692219da08?s=48&d=monsterid&r=g',
+              name: 'admin',
+              content: '1.0的有，在之前的文章里，你可以找找',
+              hasReply: false,
+              date: '2016-10-28 14:18:54',
+              to: 'Hello'
+            },
+            {
+              commentID: 4,
+              avatar: 'http://cn.gravatar.com/avatar/48b84191abbd3263ac0157692219da08?s=48&d=monsterid&r=g',
+              name: 'admin',
+              content: '1.0的有，在之前的文章里，你可以找找',
+              hasReply: false,
+              date: '2016-10-28 14:25:54',
+              to: 'admin'
+            }
+          ],
+          date: '2017-02-24 18:21:23'
+        }
+      ]
+    }
   },
   2: {
     id: 2,
@@ -123,14 +174,86 @@ const detail = {
     '    transition: opacity .5s ease-in-out;\n' +
     '}</code></pre> \n' +
     '<p>&nbsp;</p> \n' +
-    '<p>&nbsp;</p>'
+    '<p>&nbsp;</p>',
+    hasComment: false,
+    commentCount: 0,
+    comments: {}
   }
 }
 
-mock.mock('/article/' + 1, 'get', (res) => {
-  return detail[res.url.substring(res.url.lastIndexOf('/') + 1)]
-})
+//文章评论
+const comments = {
+  1: {
+    articleId: 1,
+    hasComment: true,
+    commentCount: 4,
+    data: {
+      pageNum: 1,
+      startPage: 1,
+      endPage: 6,
+      hasNext: true,
+      hasPrevious: false,
+      data: [
+        {
+          commentID: 1,
+          avatar: 'http://cn.gravatar.com/avatar/4a809b0ffadc2f088bc9bfb290a9eded?s=48&d=monsterid&r=g',
+          name: '白狼',
+          content: '看看',
+          hasReply: false,
+          date: '2017-02-27 21:09:22'
+        },
+        {
+          commentID: 2,
+          avatar: 'http://cn.gravatar.com/avatar/f83693065fe1ba21aa5696a70afbf718?s=48&d=monsterid&r=g',
+          name: 'June',
+          content: '百度云这地址下载不了了，点击下载js会报错，导致没反应',
+          hasReply: false,
+          date: '2017-02-24 18:21:23'
+        },
+        {
+          commentID: 3,
+          avatar: 'http://cn.gravatar.com/avatar/6e3ee46a960e3126ac08de4fc9584769?s=48&d=monsterid&r=g',
+          name: 'Hello',
+          content: '可以给个Html模板吗',
+          hasReply: true,
+          replies: [
+            {
+              commentID: 4,
+              avatar: 'http://cn.gravatar.com/avatar/48b84191abbd3263ac0157692219da08?s=48&d=monsterid&r=g',
+              name: 'admin',
+              content: '1.0的有，在之前的文章里，你可以找找',
+              hasReply: false,
+              date: '2016-10-28 14:18:54',
+              to: 'Hello'
+            },
+            {
+              commentID: 4,
+              avatar: 'http://cn.gravatar.com/avatar/48b84191abbd3263ac0157692219da08?s=48&d=monsterid&r=g',
+              name: 'admin',
+              content: '1.0的有，在之前的文章里，你可以找找',
+              hasReply: false,
+              date: '2016-10-28 14:25:54',
+              to: 'admin'
+            }
+          ],
+          date: '2017-02-24 18:21:23'
+        }
+      ]
+    }
+  }
+}
 
-mock.mock('/article/' + 2, 'get', (res) => {
-  return detail[res.url.substring(res.url.lastIndexOf('/') + 1)]
-})
+//文章详情
+for(let key in detail) {
+  mock.mock('/article/' + key, 'get', (res) => {
+    return detail[res.url.substring(res.url.lastIndexOf('/') + 1)]
+  })
+}
+
+//文章评论
+for(let key in detail) {
+  mock.mock('/article/comments/' + key, 'get', (res) => {
+    return comments[res.url.substring(res.url.lastIndexOf('/') + 1)]
+  })
+}
+
