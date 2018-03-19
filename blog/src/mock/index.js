@@ -2,7 +2,857 @@ import mock from 'mockjs'
 
 // const Random = Mock.Random
 
+const articles = {
+  1: {
+    pageNum: 1,
+    size: 10,
+    startPage: 1,
+    endPage: 6,
+    hasNext: true,
+    hasPrevious: false,
+    list: [
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      }
+    ]
+  },
+  2: {
+    pageNum: 2,
+    size: 10,
+    startPage: 1,
+    endPage: 6,
+    hasNext: true,
+    hasPrevious: false,
+    list: [
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      }
+    ]
+  },
+  3: {
+    pageNum: 2,
+    size: 10,
+    startPage: 1,
+    endPage: 6,
+    hasNext: true,
+    hasPrevious: false,
+    list: [
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      }
+    ]
+  },
+  4: {
+    pageNum: 2,
+    size: 10,
+    startPage: 1,
+    endPage: 6,
+    hasNext: true,
+    hasPrevious: false,
+    list: [
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      }
+    ]
+  },
+  5: {
+    pageNum: 2,
+    size: 10,
+    startPage: 1,
+    endPage: 6,
+    hasNext: true,
+    hasPrevious: false,
+    list: [
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      }
+    ]
+  },
+  6: {
+    pageNum: 2,
+    size: 10,
+    startPage: 1,
+    endPage: 6,
+    hasNext: true,
+    hasPrevious: false,
+    list: [
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      },
+      {
+        title: 'JS生成随机的Web安全色',
+        pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+        url: '/article/1',
+        summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+        '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+        '行代码，摘自网络 function g……',
+        author: 'admin',
+        date: '2016-09-19 10:12:24',
+        views: 2449,
+        tags: []
+      },
+      {
+        title: '使用 CSS3 实现 tip 提示 ',
+        url: '/article/2',
+        pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+        summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+        '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+        author: 'admin',
+        date: '2017-06-03',
+        views: 294,
+        tags: []
+      }
+    ]
+  }
+
+
+
+}
+
+
+
 const list = [
+  {
+    title: 'JS生成随机的Web安全色',
+    pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+    url: '/article/1',
+    summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+    '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+    '行代码，摘自网络 function g……',
+    author: 'admin',
+    date: '2016-09-19 10:12:24',
+    views: 2449,
+    tags: []
+  },
+  {
+    title: '使用 CSS3 实现 tip 提示 ',
+    url: '/article/2',
+    pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+    summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+    '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+    author: 'admin',
+    date: '2017-06-03',
+    views: 294,
+    tags: []
+  },
+  {
+    title: 'JS生成随机的Web安全色',
+    pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+    url: '/article/1',
+    summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+    '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+    '行代码，摘自网络 function g……',
+    author: 'admin',
+    date: '2016-09-19 10:12:24',
+    views: 2449,
+    tags: []
+  },
+  {
+    title: '使用 CSS3 实现 tip 提示 ',
+    url: '/article/2',
+    pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+    summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+    '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+    author: 'admin',
+    date: '2017-06-03',
+    views: 294,
+    tags: []
+  },
+  {
+    title: 'JS生成随机的Web安全色',
+    pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+    url: '/article/1',
+    summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+    '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+    '行代码，摘自网络 function g……',
+    author: 'admin',
+    date: '2016-09-19 10:12:24',
+    views: 2449,
+    tags: []
+  },
+  {
+    title: '使用 CSS3 实现 tip 提示 ',
+    url: '/article/2',
+    pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+    summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+    '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+    author: 'admin',
+    date: '2017-06-03',
+    views: 294,
+    tags: []
+  },
+  {
+    title: 'JS生成随机的Web安全色',
+    pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
+    url: '/article/1',
+    summary: '前言 今天本来打算学习下原生的ajax，后来写着写着就跑偏了，写到了我的偶像-许嵩，于是写了个小demo，当写' +
+    '到音乐的时候，每个色块颜色都一样，不好玩，于是我准备搞一个随机色，最终效果如图了 获取随机颜色 获取随机颜色就一' +
+    '行代码，摘自网络 function g……',
+    author: 'admin',
+    date: '2016-09-19 10:12:24',
+    views: 2449,
+    tags: []
+  },
+  {
+    title: '使用 CSS3 实现 tip 提示 ',
+    url: '/article/2',
+    pic: 'https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c',
+    summary: '这里是使用了CSS的after和before两个伪元素实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰' +
+    '乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，...',
+    author: 'admin',
+    date: '2017-06-03',
+    views: 294,
+    tags: []
+  },
   {
     title: 'JS生成随机的Web安全色',
     pic: 'http://vince.qiniudn.com/wp-content/uploads/2016/09/QQ截图20160919154531.png?imageView2/2/w/400/h/200',
@@ -28,15 +878,14 @@ const list = [
   }
 ]
 
-
 const detail = {
-  1 : {
+  1: {
     id: 1,
     articleInfo: {
-      title: "JS生成随机的Web安全色",
-      category: "JavaScript",
-      category_url: "#",
-      date: "2016-09-19 10:12:24",
+      title: 'JS生成随机的Web安全色',
+      category: 'JavaScript',
+      category_url: '#',
+      date: '2016-09-19 10:12:24',
       views: 2449,
       comments: 0
     },
@@ -78,10 +927,10 @@ const detail = {
   2: {
     id: 2,
     articleInfo: {
-      title: "使用 CSS3 实现 tip 提示",
-      category: "CSS",
-      category_url: "#",
-      date: "2017-06-03 13:08:05",
+      title: '使用 CSS3 实现 tip 提示',
+      category: 'CSS',
+      category_url: '#',
+      date: '2017-06-03 13:08:05',
       views: 304,
       comments: 0
     },
@@ -138,7 +987,7 @@ const detail = {
   }
 }
 
-//文章评论
+// 文章评论
 const comments = {
   1: {
     articleId: 1,
@@ -200,22 +1049,21 @@ const comments = {
   }
 }
 
-//文章列表
-mock.mock("/article", 'get', (res) => {
+// 文章列表
+mock.mock('/article', 'get', (res) => {
   return list
 })
 
-//文章详情
-for(let key in detail) {
+// 文章详情
+for (let key in detail) {
   mock.mock('/article/' + key, 'get', (res) => {
     return detail[res.url.substring(res.url.lastIndexOf('/') + 1)]
   })
 }
 
-//文章评论
-for(let key in detail) {
+// 文章评论
+for (let key in detail) {
   mock.mock('/article/comments/' + key, 'get', (res) => {
     return comments[res.url.substring(res.url.lastIndexOf('/') + 1)]
   })
 }
-

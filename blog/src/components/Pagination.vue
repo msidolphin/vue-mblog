@@ -1,6 +1,6 @@
 <template>
 	<div class="container pageNav">
-		<div class="row">	
+		<div class="row">
 			<div class="col-md-12">
 				<nav>
 				  <ul class="pagination">
@@ -17,7 +17,7 @@
 							<a href="/2.html">下一页</a>
 						</li>
 					 <!--  <li><span class='page-numbers current'>1</span></li>	 -->
-				  </ul>				
+				  </ul>
 				</nav>
 			</div>
 		</div>
@@ -25,6 +25,12 @@
 </template>
 
 <script>
+  export default {
+    props: ['pageInfo'],
+    created() {
+
+    }
+  }
 </script>
 
 <style>

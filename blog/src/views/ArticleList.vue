@@ -33,12 +33,18 @@
           </div>
         </div>
       </div>
+      <!-- pagination start -->
+      <pagination/>
+      <!-- pagination end -->
     </div>
   </div>
 </template>
 
 <script>
     import {fetch} from '@/scripts/ajax'
+    import Pagination from '@/components/Pagination'
+
+
     export default {
       name: "article",
       data() {
@@ -61,6 +67,9 @@
           })
         }
       },
+      components: {
+        Pagination
+      }
     }
 </script>
 
