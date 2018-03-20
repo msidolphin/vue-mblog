@@ -29,19 +29,19 @@
 <script>
   export default {
     props: {
-      records: {
+      records: {      //总记录数
         type: Number,
         default: 100
       },
-      pageSize: {
+      pageSize: {     //每页的记录数
         type: Number,
         default: 10
       },
-      currentPage: {
+      currentPage: {   //当前页码
         type: Number,
         default: 1
       },
-      pageGroup: {
+      pageGroup: {     //显示页码数
         type: Number,
         default: 5,
         coerce(val) {

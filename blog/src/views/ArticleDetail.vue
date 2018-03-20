@@ -95,7 +95,7 @@
                   <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                 </form>
               </div>
-            </div>			    </div>
+            </div></div>
           <!--  -->
         </div>
       </div>

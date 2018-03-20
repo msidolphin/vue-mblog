@@ -13,7 +13,7 @@
           <div class="articleBody clearfix">
             <!--缩略图-->
             <div class="articleThumb">
-              <a href="/article/20.html">
+              <a :href="article.url">
                 <img :src="article.pic" :alt="article.title" class="wp-post-image" width="400" height="200">
               </a>
             </div>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <!-- pagination start -->
-      <pagination/>
+      <pagination :pageNum="pageNum" :pageSize="pageSize" :records="records" @pageChange="pageChange" />
       <!-- pagination end -->
     </div>
   </div>
@@ -43,14 +43,13 @@
 <script>
     import {fetch} from '@/scripts/ajax'
     import Pagination from '@/components/Pagination'
-
+    import {mapGetters} from 'vuex'
+    import types from '@/store/types'
 
     export default {
       name: "article",
-      data() {
-        return {
-          articles: []
-        }
+      computed: {
+        ...mapGetters(['articles', 'pageNum', 'pageSize', 'records'])
       },
       created() {
         this.fetchData()
@@ -59,11 +58,12 @@
         '$route': 'fetchData'
       },
       methods: {
-        fetchData: function () {
-          //获取文章列表
-          fetch("/article", 'get', null).then(response => {
-            console.log(response)
-            this.articles = response.data
+        fetchData() {
+          this.pageChange(this.pageNum, this.pageSize)
+        },
+        pageChange(pageNum, pageSize) {
+          this.$store.dispatch(types.GET_ARTICLES, { pageNum: pageNum, pageSize: pageSize }).then(() => {
+
           })
         }
       },

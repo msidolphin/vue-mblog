@@ -22,6 +22,9 @@ import '@/mock'
 import 'highlight.js/styles/googlecode.css'
 import  hljs from 'highlight.js'
 
+//Vuex
+import store from '@/store'
+
 Vue.config.productionTip = false
 
 hljs.Highlighting = function () {
@@ -38,5 +41,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })
