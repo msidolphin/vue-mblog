@@ -1,6 +1,6 @@
 <template>
 	<div class="banner">
-		<!-- header -->
+		<!-- site -->
 		<div class="header container">
 			<!--个人信息-->
 			<div class="row">
@@ -9,20 +9,31 @@
 						<div class="logo">
 						    <a href="/">
 						   	<!--  <img src="/templates/simple/picture/kide.jpg" alt="logo"> -->
-									<img src="../images/33754f47ab85497ea29176b9be84123f.jpg" class="animated bounceInDown">
+									<img :src="header.avatar" class="animated bounceInDown">
 						    </a>
 						</div>
 						<div class="logoTheme">
-							<h3>谦和之中见卓越</h3>
+							<h3>{{ header.title }}</h3>
 						</div>
-					</div>				
+					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</div>
 </template>
 
 <script>
+  import {mapGetters, mapActions} from 'vuex'
+  import types from '@/store/types'
+  export default {
+    computed: {
+      ...mapGetters(['header'])
+    },
+    created() {
+      //获取站点头部信息
+      this.$store.dispatch(types.GET_SITE_HEADER)
+    }
+  }
 </script>
 
 <style>

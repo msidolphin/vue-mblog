@@ -5,16 +5,16 @@
 <meta charset="utf-8" />
 <title itemprop="name">使用JavaScript随机生成十六进制颜色值 - 源于分享</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />    
-<meta name="HandheldFriendly" content="True" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="HandheldFriendly" content="True" />
 <meta name="baidu-site-verification" content="e3pVbsVmlF" />
 <meta itemprop="image" content="https://www.myblogbo.com/attachment/20161219/33754f47ab85497ea29176b9be84123f.jpg"/>
 <meta name="keywords" content="十六进制,javascript,随机生成颜色值,js,使用JavaScript随机生成十六进制颜色值">
 <meta name="description" content="使用JavaScript随机生成十六进制颜色值">
-   
+
 <link rel="shortcut icon" href="/templates/simple/images/share.ico"/>
 <link rel="stylesheet" type="text/css" href="./templates/css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="./templates/css/font-awesome.min.css"/>  
+<link rel="stylesheet" type="text/css" href="./templates/css/font-awesome.min.css"/>
 <link rel="stylesheet" type="text/css" media="all" href="./templates/css/style.css"/>
 
 
@@ -57,7 +57,7 @@
 <div class="banner" style="background:url(http://file.myblogbo.com/banner.jpg);">  -->
 <div class="banner" style="background: url(/templates/simple/images/banner.jpg);">
 
-	<!-- header -->
+	<!-- site -->
 	<div class="header container">
 		<!--个人信息-->
 		<div class="row">
@@ -72,10 +72,10 @@
 					<div class="logoTheme">
 						<h3>谦和之中见卓越</h3>
 					</div>
-				</div>				
+				</div>
 			</div>
 		</div>
-	</div> 
+	</div>
 </div>
 	<div class="articleDetail container">
     <div class="row">
@@ -95,8 +95,8 @@
    					</ul>
             	</div>
             <!-- 内容 -->
-            <div class="articleCon post_content"><p>以下两种方法都是可行的。</p> 
-<p>方法一：</p> 
+            <div class="articleCon post_content"><p>以下两种方法都是可行的。</p>
+<p>方法一：</p>
 <pre class="language-javascript"><code>function getRandomColor () {
   let rgb = []
   for (let i = 0 ; i &lt; 3; ++i){
@@ -105,8 +105,8 @@
     rgb.push(color)
   }
   return '#' + rgb.join('')
-}</code></pre> 
-<p>方法二：</p> 
+}</code></pre>
+<p>方法二：</p>
 <pre class="language-javascript"><code>function getRandomColor(){
   //16进制的最大范围16777215（#FFFFFF）
   //把颜色变成16进制
@@ -115,8 +115,8 @@
     str = '0'+str; //不够六位数加 0
   }
   return  "#"+str;
-}</code></pre> 
-<p>使用的时候直接调用上面的函数就可以，拿到随机的颜色值</p> 
+}</code></pre>
+<p>使用的时候直接调用上面的函数就可以，拿到随机的颜色值</p>
 <pre class="language-javascript"><code> color:getRandomColor();</code></pre>
 
             	<div class="zhuanzai">
@@ -129,13 +129,13 @@
    				</div> -->
            </div>
     <!-- -->
-        <div id="SOHUCS" sid="9" ></div> 
-        <script type="text/javascript"> 
-        (function(){ 
-        var appid = 'cysUSTfb3'; 
-        var conf = 'prod_e0ba6c3f8859de137ede5155cf635839'; 
-        var width = window.innerWidth || document.documentElement.clientWidth; 
-        if (width < 960) { 
+        <div id="SOHUCS" sid="9" ></div>
+        <script type="text/javascript">
+        (function(){
+        var appid = 'cysUSTfb3';
+        var conf = 'prod_e0ba6c3f8859de137ede5155cf635839';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
         window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
    	<!--  -->
       </div>
@@ -182,18 +182,18 @@
 									<li><a href="/article-apache-1.html">apache</a></li>
 									<li><a href="/article-编译安装apache-1.html">编译安装apache</a></li>
 									<li><a href="/article-面试题-1.html">面试题</a></li>
-					      </ul>			
+					      </ul>
 				     </div>
 			    </div>
 			</div>
 
-			
+
 		<div class="col-md-3">
 	       <div class="widget contactbox">
 	           <h4 class="title">联系我</h4>
 	           <div class="contact-us clearfix">
-				   <li>	
-				<a href="javascript:;">		
+				   <li>
+				<a href="javascript:;">
 				   <i class="fa fa-envelope-o"></i>465180253@qq.com</a></li>
 				</div>
 	         </div>
@@ -207,13 +207,13 @@
 			      </div>
 			   </div>
 		    </div>
-	    
+
 	        </div>
 	        <div class="row">
 	        	<div class="copyright" style="text-align:center;">
 	        		<span>© 2016-2017 <a href="http://www.myblogbo.com">myblogbo.com</a> , All Rights Reserved  </span>
 	        		<span><a href="http://www.miibeian.gov.cn/" target="_blank" title="粤ICP备16066078号-2">粤ICP备16066078号-2</a></span>
-	        		<span>Designed by · <a href="http://vinceok.com">vinceok</a></span> 
+	        		<span>Designed by · <a href="http://vinceok.com">vinceok</a></span>
 	        		<span><a href="/sitemap" target="_blank">网站地图</a></span>
 	        		<span><script>
 var _hmt = _hmt || [];
@@ -229,7 +229,7 @@ var _hmt = _hmt || [];
 	        </div>
 	    </div>
 	</div>
-</footer>	
+</footer>
 <!-- footer end --><!-- 底部菜单&侧边栏按钮 -->
 <div class="icon-search" title="搜索内容">
 	<i style="margin-top:18px;" class="fa fa-search"></i>
@@ -262,7 +262,7 @@ var _hmt = _hmt || [];
 			        		<li class="menu-item menu-item-type-taxonomy menu-item-object-category">
 				        		<a href="/article-javascript-1.html">JavaScript</a>
 			        		</li>
-				</ul>			
+				</ul>
 			</div>
 		</div>
 	</div>
