@@ -48,6 +48,12 @@
           v = v > 0 ? v : 5
           return v % 2 === 0 ? v + 1 : v
         }
+      },
+      payload: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
     data() {
@@ -138,7 +144,7 @@
         if(this.current === val) {return}
         if(val > 0 && val <= this.pages) {
           this.current = val
-          this.$emit('pageChange', this.current, this.pageSize)
+          this.$emit('pageChange', this.current, this.pageSize, this.payload)
         }
       }
     }

@@ -22,8 +22,12 @@ import '@/mock'
 import 'highlight.js/styles/googlecode.css'
 import  hljs from 'highlight.js'
 
+import ElementUi from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
 //Vuex
 import store from '@/store'
+
+Vue.use(ElementUi)
 
 Vue.config.productionTip = false
 
@@ -35,6 +39,7 @@ hljs.Highlighting = function () {
   var blocks = document.querySelectorAll('pre code');
   [].forEach.call(blocks, hljs.highlightBlock);
 }
+
 
 /* eslint-disable no-new */
 new Vue({

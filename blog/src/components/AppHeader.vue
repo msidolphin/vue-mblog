@@ -9,7 +9,7 @@
 						<div class="logo">
 						    <a href="/">
 						   	<!--  <img src="/templates/simple/picture/kide.jpg" alt="logo"> -->
-									<img :src="header.avatar" class="animated bounceInDown">
+									<img src="http://localhost:8089/33754f47ab85497ea29176b9be84123f.jpg" class="animated bounceInDown">
 						    </a>
 						</div>
 						<div class="logoTheme">

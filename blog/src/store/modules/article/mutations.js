@@ -1,6 +1,7 @@
 import types from '@/store/types'
 
 const mutations = {
+  //设置文章列表
   [types.SET_ARTICLES](state, articles) {
     state.articles = articles
   },
@@ -12,6 +13,13 @@ const mutations = {
   },
   [types.SET_ARTICLE_RECORDS](state, records) {
     state.records = records
+  },
+  //设置文章详情
+  [types.SET_ARTICLE_DETAIL](state, article) {
+    state.article = article
+  },
+  [types.SET_COMMENT](state, comments) {
+    state.comments = comments
   }
 }
 

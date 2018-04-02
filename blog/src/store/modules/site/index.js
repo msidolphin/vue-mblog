@@ -6,7 +6,7 @@ const site = {
   state: {
     header: {
       avatar: 'https://note.youdao.com/yws/api/personal/file/WEB67826504207b8e7d6b33975cb709d4ab?method=download&shareKey=fb8da8af98adb8f2a3efbfa71d8d9e38',
-      title: '谦和之中见卓越'
+      title: '博客标语'
     },
     footer: {
       contact: {
