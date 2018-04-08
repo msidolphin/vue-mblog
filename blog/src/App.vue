@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div id="app">
     <search-box/>
     <app-shadow/>
@@ -15,28 +15,39 @@
 </template>
 
 <script>
-import AppHeader  from '@/components/AppHeader'
-import AppFooter  from '@/components/AppFooter'
-import MenuBox    from '@/components/MenuBox'
-import ScrollBar  from '@/components/ScrollBar'
-import SearchBox  from '@/components/SearchBox'
-import LoadingBar from '@/components/LoadingBar'
-import AppShadow  from '@/components/AppShadow'
-import ToolsBar   from '@/components/ToolsBar'
+  import types from '@/store/types'
 
-export default {
-  name: 'App',
-  components: {
-  	AppHeader,
-  	AppFooter,
-  	MenuBox,
-  	ScrollBar,
-  	LoadingBar,
-  	SearchBox,
-  	AppShadow,
-  	ToolsBar
+  import AppHeader  from '@/components/AppHeader'
+  import AppFooter  from '@/components/AppFooter'
+  import MenuBox    from '@/components/MenuBox'
+  import ScrollBar  from '@/components/ScrollBar'
+  import SearchBox  from '@/components/SearchBox'
+  import LoadingBar from '@/components/LoadingBar'
+  import AppShadow  from '@/components/AppShadow'
+  import ToolsBar   from '@/components/ToolsBar'
+
+  export default {
+    name: 'App',
+    components: {
+      AppHeader,
+      AppFooter,
+      MenuBox,
+      ScrollBar,
+      LoadingBar,
+      SearchBox,
+      AppShadow,
+      ToolsBar
+    },
+    methods: {
+      getData() {
+        //获取网站配置信息 例如高频标签、友情链接等
+        this.$store.dispatch(types.GET_SITE_SETTINGS)
+      }
+    },
+    created() {
+      this.getData()
+    },
   }
-}
 </script>
 
 <style>

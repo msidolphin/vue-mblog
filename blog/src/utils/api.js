@@ -42,3 +42,7 @@ export function addComment(params) {
 export function addReply(params) {
   return Axios.$request('/comments/replies', 'post', params)
 }
+
+export function fetchSiteElements() {
+  return Axios.$request('/elements', 'get')
+}

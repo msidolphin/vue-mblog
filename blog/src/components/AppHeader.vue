@@ -9,11 +9,11 @@
 						<div class="logo">
 						    <a href="/">
 						   	<!--  <img src="/templates/simple/picture/kide.jpg" alt="logo"> -->
-									<img src="http://localhost:8089/33754f47ab85497ea29176b9be84123f.jpg" class="animated bounceInDown">
+									<img v-if="header.avatar" :src="header.avatar" class="animated bounceInDown">
 						    </a>
 						</div>
 						<div class="logoTheme">
-							<h3>{{ header.title }}</h3>
+							<h3 v-if="header.title">{{ header.title }}</h3>
 						</div>
 					</div>
 				</div>
@@ -28,10 +28,6 @@
   export default {
     computed: {
       ...mapGetters(['header'])
-    },
-    created() {
-      //获取站点头部信息
-      this.$store.dispatch(types.GET_SITE_HEADER)
     }
   }
 </script>

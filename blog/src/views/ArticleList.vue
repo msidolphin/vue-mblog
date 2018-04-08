@@ -47,7 +47,6 @@
     import types from '@/store/types'
 
     export default {
-      name: "article",
       computed: {
         ...mapGetters(['articles', 'user'])
       },

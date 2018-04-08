@@ -11,25 +11,19 @@ export default new Router({
   routes: [
     {
       path      : '/',
-      redirect  : 'home'
-    },
-    {
-      path: '/home',
       component: Home
     },
     {
       path: '/article',
-      name: 'articles',
       component: ArticleList
     },
     { path: '/article/:id',
-      name: 'article',
       props: true,
       component: ArticleDetail
     },
     {
     	path: '*',
-    	redriect: '/'
+    	redirect: '/'
     }
   ]
 })

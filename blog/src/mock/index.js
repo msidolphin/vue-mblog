@@ -1461,9 +1461,9 @@ const comments = {
 }
 
 //获取网站头部信息
-mock.mock('/header', 'get', () => {
-  return header
-})
+// mock.mock('/header', 'get', () => {
+//   return header
+// })
 
 //获取网站底部信息
 mock.mock('/footer', 'get', () => {

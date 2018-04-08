@@ -1,14 +1,14 @@
 <!--主页-->
 <template>
-  <article-list/>
+  <articles/>
 </template>
 
 <script>
-  import ArticleList from '@/views/ArticleList'
+  import Articles from '@/views/ArticleList'
   export default  {
     name: 'Home',
     components: {
-      ArticleList
+      Articles
     }
   }
 </script>

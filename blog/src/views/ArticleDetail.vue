@@ -231,7 +231,6 @@
       //改变回复页码
       changeReplies(pageNum, pageSize, payload) {
         payload.pageNum = pageNum
-        console.log(payload)
         fetchReplies(payload).then(response => {
           //设置相关层级的回复
           this.comments.list[payload.index].replies = response.data.data

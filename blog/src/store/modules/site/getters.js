@@ -1,9 +1,9 @@
 const getters = {
   header(state) {
-    return state.header
+    return state.site.header
   },
   footer(state) {
-    return state.footer
+    return state.site.footer
   }
 }
 
