@@ -16,6 +16,9 @@ const getters = {
   },
   records(state) {
     return state.records
+  },
+  query(state) {
+    return state.query
   }
 }
 

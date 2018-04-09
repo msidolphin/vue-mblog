@@ -9,7 +9,8 @@ const article = {
     pageSize:10,
     records: null,
     article: {}, //文章详情 包含评论回复信息
-    comments: {} //评论回复
+    comments: {}, //评论回复
+    query: {}
   },
   getters,
   actions,

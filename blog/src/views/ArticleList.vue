@@ -14,12 +14,12 @@
             <!--缩略图-->
             <div class="articleThumb">
               <a :href="'/article/' + article.id">
-                <img src="https://note.youdao.com/yws/api/personal/file/0E2A880EEF6140E49190A148AEE9D5BB?method=download&shareKey=d4837d7e2efa1b12db27ef000f904a1c" :alt="article.title" class="wp-post-image" width="400" height="200">
+                <img :src="article.thumbnail" :alt="article.title" class="wp-post-image" width="400" height="200">
               </a>
             </div>
             <!--摘要-->
             <div class="articleFeed">
-              <p>yangyu</p>
+              <p>{{article.summary}}</p>
             </div>
           </div>
           <div class="articleFooter clearfix">
@@ -27,9 +27,14 @@
               <li><i class="fa fa-user"></i>{{ article.author }}</li>
               <li><i class="fa fa-calendar"></i>{{ article.createTime }}</li>
               <li><i class="fa fa-eye"></i>{{ article.views }}</li>
-              <li><i class="fa fa-folder-o"></i><a href="/article-css-1.html" null="">CSS</a></li>
+              <li v-if="article.tags">
+                <i class="fa fa-tag"></i>
+                <template v-for='tag in article.tags.split(",")'>
+                 <a href="#">{{tag.name}}</a>
+                </template>
+              </li>
             </ul>  <!-- CSS -->
-            <a :href="'/article/' + article.id" class="btn btn-readmore btn-info btn-md">阅读更多</a>
+            <router-link :to="'/article/' + article.id" class="btn btn-readmore btn-info btn-md">阅读更多</router-link>
           </div>
         </div>
       </div>
@@ -48,22 +53,23 @@
 
     export default {
       computed: {
-        ...mapGetters(['articles', 'user'])
+        ...mapGetters(['articles', 'user', 'query'])
       },
-      created() {
-        this.fetchData()
+      mounted() {
+        this.fetchData(this.query)
       },
       watch: {
-        '$route': 'fetchData'
+        '$route': 'fetchData', //不是要监听路由的改变，还要监听query的改变
+        'query': 'fetchData'
       },
       methods: {
-        fetchData() {
-          this.pageChange(this.pageNum, this.pageSize)
+        fetchData(query) {
+          this.pageChange(this.pageNum, this.pageSize, query)
           //获取用户信息
           this.$store.dispatch(types.GET_USER)
         },
-        pageChange(pageNum, pageSize) {
-          this.$store.dispatch(types.GET_ARTICLES, { pageNum: pageNum, pageSize: pageSize })
+        pageChange(pageNum, pageSize, query) {
+          this.$store.dispatch(types.GET_ARTICLES, { pageNum: pageNum, pageSize: pageSize, ...query})
         }
       },
       components: {

@@ -49,7 +49,6 @@
                       <a rel="nofollow" class="comment-reply-link"  href="javascript:;" @click="submitReply(comment.id, comment.user.id)">回复</a>
                     </span>
                   </div>
-
                   <template v-if="comment.replies">
                     <ol class="children" v-for="reply in comment.replies.list" >
                       <li class="comment" id="li-comment-549">
@@ -70,26 +69,13 @@
                         </div>
                       </li><!-- #comment-## -->
                     </ol>
-                    <pagination  v-if="comment.replies.pages > 1" :payload="{index:index, commentId:comment.id}" :pageNum="comment.replies.pageNum" :pageSize="comment.replies.pageSize" :records="comment.replies.total" @pageChange="changeReplies" />
-
+                    <pagination size="small"  v-if="comment.replies.pages > 1" :payload="{index:index, commentId:comment.id}" :pageNum="comment.replies.pageNum" :pageSize="comment.replies.pageSize" :records="comment.replies.total" @pageChange="changeReplies" />
                   </template>
-
                 </li><!-- #comment-## -->
-
               </ol>
-              <!-- pagination start -->
-              <div style="display: inline-block; text-align: center">
-                <el-pagination
-                  v-if="comments.pages > 1"
-                  background
-                  layout="prev, pager, next"
-                  :page-size="comments.pageSize"
-                  :current-page="comments.pageNum"
-                  :total="comments.total"
-                @current-change="changeComments">
-                </el-pagination>
-              </div>
-              <!-- pagination end -->
+              <!-- 评论 pagination start -->
+              <pagination v-if="comments.pages > 1" size="small" :pageNum="comments.pageNum" :pageSize="comments.pageSize" :records="comments.total" @pageChange="changeComments" />
+              <!-- 评论 pagination end -->
               <!-- 评论列表 end -->
               <div id="respond" class="respond" role="form">
                 <h2 id="reply-title" class="comments-title"></h2>
@@ -98,13 +84,13 @@
                   <textarea class="form-control" rows="3" id="comment" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..." tabindex="1" name="content"></textarea>
                   <div class="commentform-info">
                     <label id="author_name" for="author">
-                      <input class="form-control" id="author" type="text" tabindex="2" :value="user.username" name="username" placeholder="昵称[必填]" required="">
+                      <input class="form-control" id="author" type="text" tabindex="2" v-model="user.username" name="username" placeholder="昵称[必填]">
                     </label>
                     <label id="author_email" for="email">
-                      <input class="form-control" id="email" type="text" tabindex="3" :value="user.email" name="email" placeholder="邮箱[必填]" required="">
+                      <input class="form-control" id="email" type="text" tabindex="3" v-model="user.email" name="email" placeholder="邮箱[必填]">
                     </label>
                     <label id="author_website" for="url">
-                      <input class="form-control" id="url" type="text" tabindex="4" :value="user.website" name="website" placeholder="网址(可不填)">
+                      <input class="form-control" id="url" type="text" tabindex="4" v-model="user.website" name="website" placeholder="网址(可不填)">
                     </label>
                   </div>
                   <div class="btn-group commentBtn" role="group">
@@ -193,18 +179,23 @@
       publish() {
         //TODO 校验
 
-
         if(replyForm.type.value === '0') {
           addComment({
             text: "", //无用，貌似qs有Bug，一个参数后端无法接收
             articleId: replyForm.article_id.value,
             content:   replyForm.content.value,
-            username:  replyForm.username.value,
-            email:     replyForm.email.value,
-            website:   replyForm.website.value,
+            username:  this.user.username,
+            email:     this.user.email,
+            website:   this.user.website,
+            text2: "",
           }).then(response => {
             //刷新评论列表
-            this.changeComments(this.commentCurPage);
+            this.article.replies += 1
+            this.changeComments(this.commentCurPage)
+            //获取用户信息
+            this.$store.dispatch(types.GET_USER)
+          }).catch(error => {
+
           })
 
         }else if(replyForm.type.value === '1') {
@@ -213,12 +204,18 @@
             commentId: replyForm.comment_id.value,
             toUserId: replyForm.to_user_id.value,
             content: replyForm.content.value,
-            username:  replyForm.username.value,
-            email:     replyForm.email.value,
-            website:   replyForm.website.value,
+            username:  this.user.username,
+            email:     this.user.email,
+            website:   this.user.website,
+            text2: "",
           }).then((response)=>{
             //刷新评论列表
-            this.changeComments(this.commentCurPage);
+            this.article.replies += 1
+            this.changeComments(this.commentCurPage)
+            //获取用户信息
+            this.$store.dispatch(types.GET_USER)
+          }).catch(error => {
+
           })
         }
         replyForm.type.value = '0'
@@ -241,7 +238,7 @@
     mounted() {
       this.fetchData()
       //代码高亮 暂时这么解决...
-      setTimeout(hljs.Highlighting, 300)
+      setTimeout(hljs.Highlighting, 500)
     }
   }
 </script>

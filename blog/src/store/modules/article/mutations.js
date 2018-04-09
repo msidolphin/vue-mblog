@@ -20,6 +20,9 @@ const mutations = {
   },
   [types.SET_COMMENT](state, comments) {
     state.comments = comments
+  },
+  [types.SET_QUERY](state, query) {
+    state.query = query
   }
 }
 

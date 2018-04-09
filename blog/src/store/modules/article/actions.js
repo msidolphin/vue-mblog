@@ -6,8 +6,15 @@ const actions = {
   [types.GET_ARTICLES]({commit, state}, payload) {
     //获取文章列表
     fetchList(payload).then(response => {
+      console.log(response.data.data)
       commit(types.SET_ARTICLES, response.data.data)
     })
+  },
+  [types.SET_QUERY]({commit}, payload) {
+    commit(types.SET_QUERY, payload)
+  },
+  [types.SET_ARTICLES]({commit}, payload) {
+    commit(types.SET_ARTICLES, payload)
   },
   [types.GET_ARTICLE_DETAIL]({commit, state}, payload) {
     //获取文章详情

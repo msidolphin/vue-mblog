@@ -1,27 +1,69 @@
 <template>
-	<div class="container pageNav">
+	<div class="container pageNav" >
 		<div class="row">
-			<div class="col-md-12">
-				<nav>
-				  <ul class="pagination">
+      <div class="col-md-8" v-if="size === 'small'">
+        <nav class="small nav">
+          <ul class="pagination">
             <li class="previous" v-if="hasPrevious">
-							<a href="javascript:;" v-on:click="setCurrentPage(current - 1)">上一页</a>
-						</li>
+              <a href="javascript:;" v-on:click="setCurrentPage(current - 1)">上一页</a>
+            </li>
 
-						<li class="active disabled" v-if="current == p.val" v-for="p in pageList">
-							<a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
-						</li>
+            <li class="active disabled" v-if="current == p.val" v-for="p in pageList">
+              <a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
+            </li>
             <li v-else>
               <a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
             </li>
 
-						<li class="next" v-if="hasNext">
-							<a href="javascript:;" v-on:click="setCurrentPage(current + 1)">下一页</a>
-						</li>
-					 <!--  <li><span class='page-numbers current'>1</span></li>	 -->
-				  </ul>
-				</nav>
-			</div>
+            <li class="next" v-if="hasNext">
+              <a href="javascript:;" v-on:click="setCurrentPage(current + 1)">下一页</a>
+            </li>
+            <!--  <li><span class='page-numbers current'>1</span></li>	 -->
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-4" v-else-if="size === 'mini'">
+        <nav>
+          <ul class="pagination">
+            <li class="previous" v-if="hasPrevious">
+              <a href="javascript:;" v-on:click="setCurrentPage(current - 1)">上一页</a>
+            </li>
+
+            <li class="active disabled" v-if="current == p.val" v-for="p in pageList">
+              <a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
+            </li>
+            <li v-else>
+              <a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
+            </li>
+
+            <li class="next" v-if="hasNext">
+              <a href="javascript:;" v-on:click="setCurrentPage(current + 1)">下一页</a>
+            </li>
+            <!--  <li><span class='page-numbers current'>1</span></li>	 -->
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-12" v-else>
+        <nav>
+          <ul class="pagination">
+            <li class="previous" v-if="hasPrevious">
+              <a href="javascript:;" v-on:click="setCurrentPage(current - 1)">上一页</a>
+            </li>
+
+            <li class="active disabled" v-if="current == p.val" v-for="p in pageList">
+              <a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
+            </li>
+            <li v-else>
+              <a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
+            </li>
+
+            <li class="next" v-if="hasNext">
+              <a href="javascript:;" v-on:click="setCurrentPage(current + 1)">下一页</a>
+            </li>
+            <!--  <li><span class='page-numbers current'>1</span></li>	 -->
+          </ul>
+        </nav>
+      </div>
 		</div>
 	</div>
 </template>
@@ -54,6 +96,10 @@
         default() {
           return {}
         }
+      },
+      size: {
+        type: String,
+        default: 'normal'
       }
     },
     data() {

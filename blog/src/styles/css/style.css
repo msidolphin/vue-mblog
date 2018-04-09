@@ -567,6 +567,12 @@ article
 	background:#fff;
 	box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.pageNav nav.small {
+  background: #fff;
+  box-shadow: none;
+}
+
+
 .pagination{
 	margin:15px 0 10px 15px;
 	overflow: hidden;
@@ -752,7 +758,7 @@ article-detail
 	/*width:100%;*/
 	display:block;
 	height:75%;
-	margin:0 auto;
+	/*margin:0 auto;*/
 	text-align: center;
 	border:0;
 }
