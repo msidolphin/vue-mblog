@@ -2,7 +2,7 @@
 <template>
   <div class="articleDetail container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-11 col-sm-12">
         <div class="articleContent">
           <!-- article info start -->
           <div class="article-info-wrap">

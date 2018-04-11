@@ -8,7 +8,7 @@
                   <h4 class="title">文章标签</h4>
                   <div class="box tags clearfix">
                     <ul class="post_tags" v-if="footer.tags">
-                      <li v-for="tag in footer.tags"><a href="">{{tag.name}}</a></li>
+                      <li v-for="tag in footer.tags"><a href="javascript:;" @click="searchByTag(tag.name)">{{tag.name}}</a></li>
                     </ul>
                   </div>
                 </div>
@@ -52,7 +52,14 @@
   import {mapGetters} from 'vuex'
   import types from '@/store/types'
   export default {
-    computed: mapGetters(['footer'])
+    computed: mapGetters(['footer']),
+    methods: {
+      //根据标签名进行检索
+      searchByTag(tagName) {
+        this.$store.dispatch(types.SET_QUERY, {tags: tagName})
+        this.$router.push('/')
+      }
+    }
   }
 </script>
 

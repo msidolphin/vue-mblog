@@ -19,18 +19,16 @@
     },
     methods: {
       search() {
-        if(this.query) {
-          //这里搜素条件为文章标题右模糊查询
-          this.$store.dispatch(types.SET_QUERY, {title: this.query})
-          //隐藏搜索栏
-          let shadow = document.querySelector('.shadow')
-          let searchForm = document.querySelector('#searchForm')
-          shadow.style.display = ''
-          searchForm.style.top = '0'
-          searchForm.style.opacity = '0'
-          //回到首页进行查询
-          this.$router.push('/')
-        }
+        //这里搜素条件为文章标题右模糊查询
+        this.$store.dispatch(types.SET_QUERY, {title: this.query})
+        //隐藏搜索栏
+        let shadow = document.querySelector('.shadow')
+        let searchForm = document.querySelector('#searchForm')
+        shadow.style.display = ''
+        searchForm.style.top = '0'
+        searchForm.style.opacity = '0'
+        //回到首页进行查询
+        this.$router.push('/')
       }
     }
   }

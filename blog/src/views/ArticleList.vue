@@ -2,7 +2,7 @@
 <template>
   <div class="articleList container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-11 col-sm-12">
         <!--single article-->
         <div class="article" v-for="article in articles.list">
           <div class="articleHeader">
@@ -29,8 +29,8 @@
               <li><i class="fa fa-eye"></i>{{ article.views }}</li>
               <li v-if="article.tags">
                 <i class="fa fa-tag"></i>
-                <template v-for='tag in article.tags.split(",")'>
-                 <a href="#">{{tag.name}}</a>
+                <template v-for='tag in article.tagArray'>
+                 <span style="display:inline-block;margin-left:10px">{{tag}}</span>
                 </template>
               </li>
             </ul>  <!-- CSS -->
@@ -39,7 +39,7 @@
         </div>
       </div>
       <!-- pagination start -->
-      <pagination :pageNum="articles.pageNum" :pageSize="articles.pageSize" :records="articles.total" @pageChange="pageChange" />
+      <pagination v-if="articles.total > 0" :pageNum="articles.pageNum" :pageSize="articles.pageSize" :records="articles.total" @pageChange="pageChange" />
       <!-- pagination end -->
     </div>
   </div>
@@ -64,6 +64,8 @@
       },
       methods: {
         fetchData(query) {
+          //回到页面顶部
+          window.scrollTo(0,0);
           this.pageChange(this.pageNum, this.pageSize, query)
           //获取用户信息
           this.$store.dispatch(types.GET_USER)

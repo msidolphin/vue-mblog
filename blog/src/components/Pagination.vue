@@ -50,7 +50,7 @@
               <a href="javascript:;" v-on:click="setCurrentPage(current - 1)">上一页</a>
             </li>
 
-            <li class="active disabled" v-if="current == p.val" v-for="p in pageList">
+            <li class="active" v-if="current == p.val" v-for="p in pageList">
               <a href="javascript:;" v-on:click="setCurrentPage(p.val)">{{ p.text }}</a>
             </li>
             <li v-else>
@@ -73,7 +73,7 @@
     props: {
       records: {      //总记录数
         type: Number,
-        default: 100
+        default: 0
       },
       pageSize: {     //每页的记录数
         type: Number,
@@ -185,6 +185,9 @@
         return list
       }
     },
+    watch: {
+      pageNum: 'setCurrent'
+    },
     methods: {
       setCurrentPage(val) {
         if(this.current === val) {return}
@@ -192,6 +195,9 @@
           this.current = val
           this.$emit('pageChange', this.current, this.pageSize, this.payload)
         }
+      },
+      setCurrent() {
+        this.current = this.pageNum
       }
     }
   }
