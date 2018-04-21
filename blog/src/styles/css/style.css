@@ -335,7 +335,7 @@ td{
 }
 .mobile-menuicon{
 	position: fixed;
-	bottom:380px;
+	bottom:323px;
 	right:calc(50% - 525px);
 	text-align: center;
 	cursor: pointer;
@@ -349,7 +349,7 @@ td{
 }
 .to-top{
 	position: fixed;
-	bottom:323px;
+	bottom:265px;
 	right:calc(50% - 525px);
 	overflow: hidden;
 	background: transparent;
@@ -377,7 +377,7 @@ td{
 }
 .icon-search{
 	position:fixed;
-	bottom:438px;
+	bottom:380px;
 	right:calc(50% - 525px);
 	line-height:48px;
 	background:#6c9;
@@ -736,6 +736,8 @@ article-detail
 	background: #fff;
 	box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
 .articleContent .title{
 	text-align:center;
 	font:500 26px "Microsoft Yahei";
@@ -1195,11 +1197,18 @@ textarea#comment:focus{
 /*
 media query
 */
+
+@media (min-width: 1200px) {
+  .mobile-menuicon,.to-top,.icon-search,.back{
+    right:calc(50% - 625px)!important;
+  }
+}
+
 /*ipad横屏模式以上显示器*/
 @media (max-width: 1025px) {
-	.mobile-menuicon,.to-top,.icon-search{
-		right:10px;
-	}
+  .mobile-menuicon,.to-top,.icon-search,.back{
+    right:10px!important;
+  }
 	.menubox ul{
 		margin-top:30px;
 	}
@@ -1230,6 +1239,9 @@ media query
 		font-size:14px;
 		line-height:1.6em;
 	}
+  input.responsive{
+    width: 150px!important;
+  }
 	.commentBtn{
 		float:right;
 	}
@@ -1242,6 +1254,9 @@ media query
 
 }
 @media only screen and (max-width: 767px) {
+  .mobile-menuicon,.to-top,.icon-search,.back{
+    right:10px!important;
+  }
 	.commentBtn{
 	    float:right;
 	}
@@ -1355,6 +1370,7 @@ media query
 /*	body{	font-family: Arial, "Trebuchet MS", Sans-Serif;}*/
 	.articleContent{
 		padding:15px 5px;
+    display: inline-block;
 	}
 	.secTitleBar ul li{
 		margin:0 10px 0 0;
@@ -1389,14 +1405,17 @@ media query
 	.menubox ul li a{
 		font-size: 14px;
 	}
+  .back {
+    bottom:180px!important;
+  }
 	.icon-search{
-		bottom:180px;
-	}
-	.mobile-menuicon{
 		bottom:130px;
 	}
-	.to-top{
+	.mobile-menuicon{
 		bottom:80px;
+	}
+	.to-top{
+		bottom:30px;
 	}
 	.widget{
 		margin-left:8px;

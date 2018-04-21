@@ -2,7 +2,7 @@
 <template>
   <div class="articleDetail container">
     <div class="row">
-      <div class="col-md-11 col-sm-12">
+      <div class="col-md-12 col-sm-12">
         <div class="articleContent">
           <!-- article info start -->
           <div class="article-info-wrap">
@@ -84,13 +84,13 @@
                   <textarea class="form-control" rows="3" id="comment" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..." tabindex="1" name="content"></textarea>
                   <div class="commentform-info">
                     <label id="author_name" for="author">
-                      <input class="form-control" id="author" type="text" tabindex="2" v-model="user.username" name="username" placeholder="昵称[必填]">
+                      <input class="form-control responsive" id="author" type="text" tabindex="2" v-model="user.username" style="width:200px;" name="username" placeholder="昵称[必填]">
                     </label>
                     <label id="author_email" for="email">
-                      <input class="form-control" id="email" type="text" tabindex="3" v-model="user.email" name="email" placeholder="邮箱[必填]">
+                      <input class="form-control responsive" id="email" type="text" tabindex="3" v-model="user.email" style="width:200px;" name="email" placeholder="邮箱[必填]">
                     </label>
                     <label id="author_website" for="url">
-                      <input class="form-control" id="url" type="text" tabindex="4" v-model="user.website" name="website" placeholder="网址(可不填)">
+                      <input class="form-control responsive" id="url" type="text" tabindex="4" v-model="user.website" style="width:200px;" name="website" placeholder="网址(可不填)">
                     </label>
                   </div>
                   <div class="btn-group commentBtn" role="group">

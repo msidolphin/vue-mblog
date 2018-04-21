@@ -2,7 +2,7 @@
 <template>
   <div class="articleList container">
     <div class="row">
-      <div class="col-md-11 col-sm-12">
+      <div class="col-md-12 col-sm-12">
         <!--single article-->
         <div class="article" v-for="article in articles.list">
           <div class="articleHeader">
@@ -59,7 +59,7 @@
         this.fetchData(this.query)
       },
       watch: {
-        '$route': 'fetchData', //不是要监听路由的改变，还要监听query的改变
+        '$route': 'fetchData',
         'query': 'fetchData'
       },
       methods: {

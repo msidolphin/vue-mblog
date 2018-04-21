@@ -20,7 +20,7 @@
     methods: {
       search() {
         //这里搜素条件为文章标题右模糊查询
-        this.$store.dispatch(types.SET_QUERY, {title: this.query})
+        this.$store.dispatch(types.SET_QUERY, {title: this.query, summary: this.query, tag: this.query})
         //隐藏搜索栏
         let shadow = document.querySelector('.shadow')
         let searchForm = document.querySelector('#searchForm')
@@ -28,7 +28,7 @@
         searchForm.style.top = '0'
         searchForm.style.opacity = '0'
         //回到首页进行查询
-        this.$router.push('/')
+        this.$router.push('/article/_search')
       }
     }
   }

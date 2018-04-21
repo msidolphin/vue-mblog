@@ -22,12 +22,9 @@ import '@/mock'
 import 'highlight.js/styles/googlecode.css'
 import  hljs from 'highlight.js'
 
-import ElementUi from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css';
 //Vuex
 import store from '@/store'
 
-Vue.use(ElementUi)
 
 Vue.config.productionTip = false
 
