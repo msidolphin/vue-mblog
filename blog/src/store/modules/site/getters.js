@@ -4,6 +4,9 @@ const getters = {
   },
   footer(state) {
     return state.site.footer
+  },
+  isLoading(state) {
+    return state.isLoading
   }
 }
 

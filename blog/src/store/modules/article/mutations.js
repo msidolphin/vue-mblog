@@ -23,6 +23,9 @@ const mutations = {
   },
   [types.SET_QUERY](state, query) {
     state.query = query
+  },
+  [types.SET_SIMPLE_QUERY](state, query) {
+    state.simpleQuery = query
   }
 }
 

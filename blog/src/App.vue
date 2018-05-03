@@ -11,6 +11,7 @@
     <app-footer/>
     <menu-box/>
     <tools-bar/>
+    <loading :loading="isLoading"/>
   </div>
 </template>
 
@@ -25,10 +26,13 @@
   import LoadingBar from '@/components/LoadingBar'
   import AppShadow  from '@/components/AppShadow'
   import ToolsBar   from '@/components/ToolsBar'
+  import Loading from "@/components/Loading";
 
+  import {mapGetters} from 'vuex'
   export default {
     name: 'App',
     components: {
+      Loading,
       AppHeader,
       AppFooter,
       MenuBox,
@@ -44,6 +48,7 @@
         this.$store.dispatch(types.GET_SITE_SETTINGS)
       }
     },
+    computed: mapGetters(['isLoading']),
     created() {
       this.getData()
     },

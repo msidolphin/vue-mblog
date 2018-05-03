@@ -9,6 +9,9 @@ const actions = {
         commit(types.SET_SITE_SETTINGS, data)
       }
     })
+  },
+  [types.SET_IS_LOADING]({commit}, isLoading) {
+    commit(types.SET_IS_LOADING, isLoading)
   }
 }
 

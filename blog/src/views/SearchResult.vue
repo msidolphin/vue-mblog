@@ -4,52 +4,75 @@
       <div class="col-md-12">
         <!--single article-->
         <div class="block block-help">
-          <p>根据关键词  <span style="color:#f00">使用</span> ，共搜索到如下文章</p>
+          <p>根据关键词  <font color="#f00">{{query.title}}</font> ，共搜索到如下文章</p>
         </div>
-        <div class="article">
+        <div class="article" v-for="res in searchResult" v-if="found">
           <div class="articleHeader">
             <h1 class="articleTitle">
-              <a href="/article/20.html">使用 CSS3 实现 tip 提示</a>
+              <router-link :to="'/article/' + res.id" v-if="res.highlight.title" v-html="res.highlight.title.join('')"></router-link>
+              <router-link :to="'/article/' + res.id" v-else v-html="res.source.title"></router-link>
             </h1>
             <span class="cate-Div">搜索结果</span>
           </div>
           <div class="articleBody clearfix">
             <!--摘要-->
-            <div class="articleFeed" style="margin-left: 0px; ">
-              <p>这里是使用了CSS的after和before两个<em>伪元素</em>实现的tip小提示。伪元素的特性就是：允许我们添加额外元素而不扰乱文档本身。事实上，伪元素表现上就像是《真正》的元素，我们能够给它们添加任何样式，</p>
+            <div class="articleFeed" style="margin-left: 0px; " v-if="res.highlight.summary">
+              <p v-html="res.highlight.summary.join('')"></p>
+            </div>
+            <div class="articleFeed" style="margin-left: 0px; " v-else>
+              <p v-html="res.source.summary"></p>
             </div>
           </div>
-          <div class="articleFooter clearfix">
-            <ul class="articleStatu">
-
-            </ul>
-            <a href="/article/20.html" class="btn btn-readmore btn-info btn-md">阅读更多</a>
-          </div>
         </div>
-      </div>
+		  </div>
     </div>
   </div>
 </template>
 
 <script>
     import {fetch} from '@/scripts/ajax'
+    import {search} from "@/utils/api";
     import Pagination from '@/components/Pagination'
     import {mapGetters} from 'vuex'
     import types from '@/store/types'
+    import Loading from "@/components/Loading";
     export default {
+      components: {Loading},
       name: "search-result",
+      data () {
+        return {
+          searchResult: [],
+          found: false
+        }
+      },
       computed: {
-        ...mapGetters(['query'])
+        ...mapGetters(['query', 'isLoading'])
       },
       watch: {
         'query': 'fetchData'
       },
       mounted() {
+        if (!this.query.title || !this.query.summary) {
+          this.$router.push('/')
+          return
+        }
         this.fetchData()
       },
       methods: {
         fetchData() {
-          console.log(this.query)
+          if (!this.query.title && !this.query.summary) {
+            this.$router.push('/')
+            return
+          }
+          this.$store.dispatch(types.SET_IS_LOADING, true)
+          search(this.query).then(response => {
+            this.$store.dispatch(types.SET_IS_LOADING, false)
+            console.log(response)
+            let data = response.data.data
+            this.searchResult = data.meta
+            if (data.hits > 0) this.found = true
+            else this.found =false
+          })
         }
       }
     }

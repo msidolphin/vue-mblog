@@ -46,3 +46,7 @@ export function addReply(params) {
 export function fetchSiteElements() {
   return Axios.$request('/elements', 'get')
 }
+
+export function search(query) {
+  return Axios.$request('/articles/_search', 'get', query)
+}

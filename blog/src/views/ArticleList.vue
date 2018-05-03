@@ -53,20 +53,20 @@
 
     export default {
       computed: {
-        ...mapGetters(['articles', 'user', 'query'])
+        ...mapGetters(['articles', 'user', 'simpleQuery'])
       },
       mounted() {
-        this.fetchData(this.query)
+        this.fetchData()
       },
       watch: {
         '$route': 'fetchData',
-        'query': 'fetchData'
+        'simpleQuery': 'fetchData'
       },
       methods: {
-        fetchData(query) {
+        fetchData() {
           //回到页面顶部
           window.scrollTo(0,0);
-          this.pageChange(this.pageNum, this.pageSize, query)
+          this.pageChange(this.pageNum, this.pageSize, this.simpleQuery)
           //获取用户信息
           this.$store.dispatch(types.GET_USER)
         },

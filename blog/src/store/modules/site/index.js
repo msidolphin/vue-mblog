@@ -7,7 +7,8 @@ const site = {
     site: {
       header: {},
       footer: {}
-    }
+    },
+    isLoading: false
   },
   getters,
   actions,

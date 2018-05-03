@@ -54,9 +54,9 @@
   export default {
     computed: mapGetters(['footer']),
     methods: {
-      //根据标签名进行检索
+      //根据标签名进行检索，现在仅仅只是简单查询（直接查询数据库）
       searchByTag(tagName) {
-        this.$store.dispatch(types.SET_QUERY, {tags: tagName})
+        this.$store.dispatch(types.SET_SIMPLE_QUERY, {tags: tagName})
         this.$router.push('/')
       }
     }
