@@ -180,6 +180,7 @@
         //TODO 校验
 
         if(replyForm.type.value === '0') {
+          this.$store.dispatch(types.SET_IS_LOADING, true)
           addComment({
             text: "", //无用，貌似qs有Bug，一个参数后端无法接收
             articleId: replyForm.article_id.value,
@@ -194,11 +195,13 @@
             this.changeComments(this.commentCurPage)
             //获取用户信息
             this.$store.dispatch(types.GET_USER)
+            this.$store.dispatch(types.SET_IS_LOADING, false)
           }).catch(error => {
-
+            this.$store.dispatch(types.SET_IS_LOADING, false)
           })
 
         }else if(replyForm.type.value === '1') {
+          this.$store.dispatch(types.SET_IS_LOADING, true)
           addReply({
             text: "",
             commentId: replyForm.comment_id.value,
@@ -214,8 +217,9 @@
             this.changeComments(this.commentCurPage)
             //获取用户信息
             this.$store.dispatch(types.GET_USER)
+            this.$store.dispatch(types.SET_IS_LOADING, false)
           }).catch(error => {
-
+            this.$store.dispatch(types.SET_IS_LOADING, false)
           })
         }
         replyForm.type.value = '0'
@@ -228,17 +232,21 @@
       //改变回复页码
       changeReplies(pageNum, pageSize, payload) {
         payload.pageNum = pageNum
+        this.$store.dispatch(types.SET_IS_LOADING, true)
         fetchReplies(payload).then(response => {
           //设置相关层级的回复
           this.comments.list[payload.index].replies = response.data.data
+          this.$store.dispatch(types.SET_IS_LOADING, false)
         })
       },
 
     },
     mounted() {
       this.fetchData()
-      //代码高亮 暂时这么解决...
-      setTimeout(hljs.Highlighting, 500)
+      this.$nextTick(() => {
+        //代码高亮
+        setTimeout(hljs.Highlighting, 1000)
+      })
     }
   }
 </script>
