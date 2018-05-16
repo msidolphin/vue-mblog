@@ -28,11 +28,9 @@
     </div>
   </div>
 </template>
-
 <script>
     import {fetch} from '@/scripts/ajax'
     import {search} from "@/utils/api";
-    import Pagination from '@/components/Pagination'
     import {mapGetters} from 'vuex'
     import types from '@/store/types'
     import Loading from "@/components/Loading";
@@ -67,7 +65,6 @@
           this.$store.dispatch(types.SET_IS_LOADING, true)
           search(this.query).then(response => {
             this.$store.dispatch(types.SET_IS_LOADING, false)
-            console.log(response)
             let data = response.data.data
             this.searchResult = data.meta
             if (data.hits > 0) this.found = true

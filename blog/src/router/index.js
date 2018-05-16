@@ -8,7 +8,7 @@ import SearchResult   from '@/views/SearchResult'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [
     {
       path      : '/',
