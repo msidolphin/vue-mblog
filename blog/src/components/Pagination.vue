@@ -186,7 +186,8 @@
       }
     },
     watch: {
-      pageNum: 'setCurrent'
+      'currentPage': 'setCurrent',
+      'current': 'setCurrent'
     },
     methods: {
       setCurrentPage(val) {
@@ -197,7 +198,7 @@
         }
       },
       setCurrent() {
-        this.current = this.pageNum
+        this.current = this.currentPage
       }
     }
   }

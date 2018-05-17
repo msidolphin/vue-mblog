@@ -69,12 +69,12 @@
                         </div>
                       </li><!-- #comment-## -->
                     </ol>
-                    <pagination size="small"  v-if="comment.replies.pages > 1" :payload="{index:index, commentId:comment.id}" :pageNum="comment.replies.pageNum" :pageSize="comment.replies.pageSize" :records="comment.replies.total" @pageChange="changeReplies" />
+                    <pagination size="small"  v-if="comment.replies.pages > 1" :payload="{index:index, commentId:comment.id}" :currentPage="comment.replies.pageNum" :pageSize="comment.replies.pageSize" :records="comment.replies.total" @pageChange="changeReplies" />
                   </template>
                 </li><!-- #comment-## -->
               </ol>
               <!-- 评论 pagination start -->
-              <pagination v-if="comments.pages > 1" size="small" :pageNum="comments.pageNum" :pageSize="comments.pageSize" :records="comments.total" @pageChange="changeComments" />
+              <pagination v-if="comments.pages > 1" size="small" :currentPage="comments.pageNum" :pageSize="comments.pageSize" :records="comments.total" @pageChange="changeComments" />
               <!-- 评论 pagination end -->
               <!-- 评论列表 end -->
               <div id="respond" class="respond" role="form">

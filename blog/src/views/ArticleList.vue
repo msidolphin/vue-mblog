@@ -39,7 +39,7 @@
         </div>
       </div>
       <!-- pagination start -->
-      <pagination v-if="articles.total > 0" :pageNum="articles.pageNum" :pageSize="articles.pageSize" :records="articles.total" @pageChange="pageChange" />
+      <pagination v-if="articles.total > 0" :currentPage="articles.pageNum" :pageSize="articles.pageSize" :records="articles.total" @pageChange="pageChange" />
       <!-- pagination end -->
     </div>
   </div>

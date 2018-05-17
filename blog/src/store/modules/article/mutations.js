@@ -4,6 +4,7 @@ const mutations = {
   //设置文章列表
   [types.SET_ARTICLES](state, articles) {
     state.articles = articles
+    state.articles.id = Math.random()
   },
   [types.SET_ARTICLE_PAGENUM](state, pageNum) {
     state.pageNum = pageNum
